@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon's Echo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rpg-awesome/0.2.0/css/rpg-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-realm="dungeon">
+    <svg class="bg-scene bg-scene--dungeon" width="100%" height="200" viewBox="0 0 800 200" preserveAspectRatio="none" shape-rendering="crispEdges">
+      <g opacity="0.25" fill="var(--color-border)"> 
+      <rect x="160" y="90"  width="20" height="30"/>
+      <rect x="230" y="90" width="20" height="30"/>
+      <rect x="300" y="90" width="20" height="30"/>
+      <rect x="370" y="90" width="20" height="30"/>
+      <rect x="440" y="90" width="20" height="30"/>
+      <rect x="510" y="90" width="20" height="30"/>
+      <rect x="580" y="90" width="20" height="30"/>
+
+      <rect x="140" y="120" width="60" height="18"/>
+      <rect x="210" y="120" width="60" height="18"/>
+      <rect x="280" y="120" width="60" height="18"/>
+      <rect x="350" y="120" width="60" height="18"/>
+      <rect x="420" y="120" width="60" height="18"/>
+      <rect x="490" y="120" width="60" height="18"/>
+      <rect x="560" y="120" width="60" height="18"/>
+ 
+      
+      <rect x="175" y="142" width="60" height="18"/>
+      <rect x="245" y="142" width="60" height="18"/>
+      <rect x="315" y="142" width="60" height="18"/>
+      <rect x="385" y="142" width="60" height="18"/>
+      <rect x="455" y="142" width="60" height="18"/>
+      <rect x="525" y="142" width="60" height="18"/>
+      
+      
+      <rect x="140" y="164" width="60" height="18"/>
+      <rect x="210" y="164" width="60" height="18"/>
+      <rect x="280" y="164" width="60" height="18"/>
+      <rect x="350" y="164" width="60" height="18"/>
+      <rect x="420" y="164" width="60" height="18"/>
+      <rect x="490" y="164" width="60" height="18"/>
+      <rect x="560" y="164" width="60" height="18"/>
+      </g>
+ 
+      <rect x="550" y="20" width="30" height="30" fill="var(--color-panel-header)" />
+      
+      <circle cx="260" cy="20" r="3" fill="var(--color-text)" opacity="0.5"/>
+      <circle cx="380" cy="35" r="2" fill="var(--color-text)" opacity="0.5"/>
+    </svg>
+
+    <svg class="bg-scene bg-scene--tavern" viewBox="0 0 800 200" preserveAspectRatio="none" shape-rendering="crispEdges">
+        <polygon points="200,200 230,100 260,200" fill="var(--color-primary-dim)" opacity="0.35"/>
+        <polygon points="230,200 300,70 370,200" fill="var(--color-panel-bg)" opacity="0.5"/>
+        <polygon points="330,200 400,80 470,200" fill="var(--color-border)" opacity="0.35"/>
+        <rect x="600" y="20" width="20" height="30" fill="var(--color-text)" opacity="0.4"/>
+
+        <rect x="500" y="100" width="70" height="110" fill="var(--color-panel-bg)" opacity="0.35"/>
+        <polygon points="490,100 580,100 530,50" fill="var(--color-panel-bg)" opacity="0.35"/>
+        <rect x="520" y="140" width="25" height="60" fill="#D4A017" opacity="0.3"/>
+        <rect x="510" y="120" width="15" height="15" fill="#D4A017" opacity="0.25"/>
+        <rect x="540" y="120" width="15" height="15" fill="#D4A017" opacity="0.25"/>
+
+         <circle cx="260" cy="20" r="1.5" fill="var(--color-text)" opacity="0.5"/>
+         <circle cx="380" cy="35" r="1.5" fill="var(--color-text)" opacity="0.5"/>
+    </svg>
+
+    <svg class="bg-scene bg-scene--forest" viewBox="0 0 800 200" preserveAspectRatio="none" shape-rendering="crispEdges">
+        <polygon points="200,200 230,140 260,200" fill="var(--color-primary-dim)" opacity="0.4"/>
+        <polygon points="260,200 295,120 330,200" fill="var(--color-panel-header)" opacity="0.35"/>
+        <polygon points="330,200 360,150 390,200" fill="var(--color-primary-dim)" opacity="0.4"/>
+        <polygon points="390,200 425,110 460,200" fill="var(--color-panel-header)" opacity="0.35"/>
+        <polygon points="460,200 490,145 520,200" fill="var(--color-primary-dim)" opacity="0.4"/>
+        <polygon points="520,200 550,115 580,200" fill="var(--color-panel-header)" opacity="0.35"/>
+        <rect x="600" y="20" width="20" height="30" fill="var(--color-text)" opacity="0.4"/>
+
+        <circle cx="260" cy="20" r="1.5" fill="var(--color-text)"/>
+        <circle cx="380" cy="35" r="1.5" fill="var(--color-text)" />
+        <circle cx="160" cy="90" r="1.5" fill="var(--color-text)"/>
+        <circle cx="250" cy="130" r="1.5" fill="var(--color-text)" />
+        <circle cx="660" cy="80" r="1.5" fill="var(--color-text)" />
+        <circle cx="610" cy="150" r="1.5" fill="var(--color-text)"/>
+    </svg>
+
+    <div class="app" id="app">
+      <div class = "chain"></div>
+        <header class="site-header">
+          <svg class="dragon-icon" viewBox="0 0 16 16" shape-rendering="crispEdges">
+        <!-- head silhouette -->
+        <rect x="4" y="3" width="8" height="2" fill="var(--color-primary)"/>
+        <rect x="3" y="5" width="10" height="4" fill="var(--color-primary)"/>
+        <rect x="4" y="9" width="8" height="2" fill="var(--color-primary)"/>
+        <!-- horns -->
+        <rect x="3" y="1" width="2" height="2" fill="var(--color-primary-dim)"/>
+        <rect x="11" y="1" width="2" height="2" fill="var(--color-primary-dim)"/>
+        <!-- eyes -->
+        <rect x="5" y="6" width="2" height="2" fill="#fff8d0"/>
+        <rect x="9" y="6" width="2" height="2" fill="#fff8d0"/>
+        <rect x="5.5" y="6.5" width="1" height="1" fill="#1a0000"/>
+        <rect x="9.5" y="6.5" width="1" height="1" fill="#1a0000"/>
+        <!-- teeth -->
+        <rect x="5" y="9" width="1" height="2" fill="#f5f5f5"/>
+        <rect x="7" y="9" width="1" height="2" fill="#f5f5f5"/>
+        <rect x="9" y="9" width="1" height="2" fill="#f5f5f5"/>
+        <rect x="11" y="9" width="1" height="2" fill="#f5f5f5"/>
+          </svg>
+      <h1 class="title">DRAGON'S ECHO</h1>
+      <p class="subtitle">✦Dungeon Master's Companion✦</p>
+        </header>
+        <div class="chain"></div>
+          <main class="panels" id="panels">
+          <section class="panel realm-panel">
+            <div class="panel-header">
+              <span>⌜── SELECT REALM ──⌝</span>
+            </div>
+            <div class="panel-body">
+              <div class="realm-list" id="realmList"></div>
+              <p class="panel-footnote">✦ Choose your realm ✦</p>
+            </div>
+          </section>
+
+          <section class="panel environment-panel">
+            <div class="panel-header">
+              <span>⌜── ENVIRONMENT ──⌝</span>
+            </div>
+            <div class="panel-body">
+              <div class="env-preview-box">
+                <svg class="env-preview env-preview--dungeon" viewBox="0 0 200 100" preserveAspectRatio="none" shape-rendering="crispEdges">
+
+                  <!-- floor -->
+                  <rect x="65" y="0" width="70" height="18" fill="var(--color-border)" opacity="0.45"/>
+                  <rect x="65" y="82" width="70" height="18" fill="var(--color-border)" opacity="0.45"/>
+                  <!-- torch -->
+                  <rect x="68" y="18" width="4" height="14" fill="#e0a530"/>
+                  <rect x="65" y="12" width="10" height="8" fill="#ffd46a" opacity="0.5"/>
+                  <rect x="68" y="32" width="4" height="24" fill="var(--color-panel-bg)"/>
+                  <!-- chain -->
+                  <rect x="95" y="0" width="6" height="70" fill="var(--color-border)" opacity="0.5"/>
+                  <rect x="90" y="18" width="16" height="4" fill="var(--color-border)" opacity="0.5"/>
+                  <rect x="90" y="30" width="16" height="4" fill="var(--color-border)" opacity="0.5"/>
+                  <rect x="90" y="42" width="16" height="4" fill="var(--color-border)" opacity="0.5"/>
+                  <rect x="90" y="54" width="16" height="4" fill="var(--color-border)" opacity="0.5"/>
+                  <!-- crate -->
+                  <rect x="110" y="68" width="18" height="18" fill="var(--color-text-dim)"/>
+                  <rect x="114" y="72" width="10" height="10" fill="var(--color-bg)"/>
+                </svg>
+                <svg class="env-preview env-preview--tavern" viewBox="0 0 200 100" preserveAspectRatio="none" shape-rendering="crispEdges">
+                  <!-- floor -->
+                  <rect x="0" y="82" width="200" height="18" fill="var(--color-border)" opacity="0.4"/>
+                  <!-- left candle -->
+                  <rect x="74" y="20" width="4" height="12" fill="var(--color-primary)"/>
+                  <rect x="74" y="28" width="4" height="24" fill="var(--color-primary-dim)"/>
+                  <rect x="71" y="15" width="10" height="6" fill="var(--color-primary)" opacity="0.5"/>
+                  <!-- right candle -->
+                  <rect x="122" y="20" width="4" height="12" fill="var(--color-primary)"/>
+                  <rect x="122" y="28" width="4" height="24" fill="var(--color-primary-dim)"/>
+                  <rect x="119" y="15" width="10" height="6" fill="var(--color-primary)" opacity="0.6"/>
+                  <!-- table top -->
+                  <rect x="80" y="48" width="40" height="6" fill="var(--color-primary-dim)"/>
+                  <!-- table body -->
+                  <rect x="76" y="54" width="48" height="14" fill="var(--color-primary-dim)" opacity="0.8"/>
+                  <!-- table legs -->
+                  <rect x="82" y="68" width="6" height="8" fill="var(--color-primary-dim)"/>
+                  <rect x="112" y="68" width="6" height="8" fill="var(--color-primary-dim)"/>
+                  <!-- mugs -->
+                  <rect x="88" y="40" width="6" height="8" fill="var(--color-text-dim)"/>
+                  <rect x="100" y="36" width="8" height="12" fill="var(--color-text-dim)"/>
+                  <rect x="112" y="42" width="6" height="6" fill="var(--color-text-dim)"/>
+                </svg>
+                <svg class="env-preview env-preview--forest" viewBox="0 0 200 100" preserveAspectRatio="none" shape-rendering="crispEdges">
+                  <!-- ground -->
+                  <rect x="60" y="92" width="80" height="8" fill="var(--color-primary-dim)"/>
+                  <!-- logs -->
+                  <rect x="92" y="86" width="16" height="4" fill="#5c4020"/>
+                  <rect x="96" y="82" width="4" height="12" fill="#5c4020"/>
+                  <!--woods-->
+                  <polyline points="90,88 100,58" style="stroke: var(--color-primary-dim); stroke-width:5" opacity="0.5"/>\
+                  <polyline points="110,88 100,58" style="stroke: var(--color-primary-dim); stroke-width:5" opacity="0.5"/>
+
+                  <!-- fire -->
+                  <rect x="98" y="74" width="4" height="4" fill="#ff4040"/>
+                  <rect x="96" y="78" width="8" height="4" fill="#ffcc44"/>
+                  <rect x="98" y="70" width="4" height="4" fill="#fff0a0"/>
+                  <!-- rocks -->
+                  <rect x="84" y="88" width="5" height="3" fill="var(--color-text-dim)"/>
+                  <rect x="112" y="88" width="5" height="3" fill="var(--color-text-dim)"/>
+                  <!-- embers -->
+                  <rect x="75" y="70" width="2" height="2" fill="#ffffff"/>
+                  <rect x="120" y="62" width="2" height="2" fill="#ffffff"/>
+                  <rect x="108" y="54" width="2" height="2" fill="#f4ff8c"/>
+                  <rect x="92" y="48" width="2" height="2" fill="#f4ff8c"/>
+                </svg>
+              </div>
+              <div class="env-row">
+                <span class="env-label">CURRENT REALM</span>
+                <span class="env-value" id="envRealmValue">🏰 Dungeon</span>
+              </div>
+              <div class="env-row">
+                <span class="env-label">AMBIENT SOUND</span>
+                <div class="ambient-control">
+                  <span class="env-value" id="envAmbientValue">Dungeon Echoes</span>
+                  <div class="ambient-switch" id="ambientToggle">
+                    <div class="ambient-knob"></div>
+                    <span class="ambient-off">OFF</span>
+                    <span class="ambient-on">ON</span>
+                  </div>
+                </div>  
+              </div>
+              <div class="env-row">
+                <span class="env-label">DIFFICULTY</span>
+                <span class="env-value" id="envDifficultyValue">Dangerous</span>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <section class="panel soundboard-panel">
+          <div class="panel-header">
+            <span>⌜── SOUNDBOARD - AMBIENT &amp; COMBAT ──⌝</span>
+          </div>
+          <div class="panel-body">
+            <div class="sound-grid" id="soundGrid"></div>
+            <p class="panel-footnote">✦ Click to play – uses Web Audio API ✦</p>
+          </div>
+        </section>
+        <main class="panels" id="panelsBottom">
+          <section class="panel dice-panel">
+            <div class="panel-header">
+              <span>⌜── DICE ROLLER ──⌝</span>
+            </div>
+            <div class="panel-body">
+              <div class="dice-grid" id="diceGrid">
+              </div>
+              <button class="roll-btn" id="rollBtn">🎲 ROLL D20</button>
+              <div class="dice-result" id="diceResult">- awaiting roll -</div>
+            </div>
+          </section>
+          <section class="panel quest-panel">
+            <div class="panel-header">
+              <span>⌜── QUEST JOURNAL ──⌝</span>
+            </div>
+            <div class="panel-body">
+              <div class="quest-progress">
+                <span class="quest-progress-label">
+                  PROGRESS: <span id="questProgressText">0/0</span>
+                </span>
+                <div class="quest-progress-bar">
+                  <div class="quest-progress-fill" id="questProgressFill"></div>
+                </div>
+              </div>
+              <div class="quest-list" id="questList"></div>
+              <div class="quest-add" id="questAdd"></div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="site-footer">
+          <div class="footer-divider-top"></div>
+          <p class="footer-text">✦ Crafted for adventurers and dungeon masters ✦</p>
+
+          <p class="footer-subtext">May your dice roll true</p>
+          <div class="footer-divider-bottom"></div>
+        </footer>
+    </div>
+    
+  
+  <script src="script.js"></script>
+</body>
+</html>
