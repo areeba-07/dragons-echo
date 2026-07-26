@@ -102,6 +102,8 @@ const SOUNDS = [
 //Dice Data
 const DICE = [4, 6, 8, 10, 12, 20];
 let selectedDice = 20;
+let recentRolls = [];
+const MAX_RECENT_ROLLS = 5;
 
 // 9 distinct sounds defined by frequency (Hz)
 const frequencies = [
@@ -484,25 +486,81 @@ function selectDice(sides) {
   //reset result display
   const resultEl = document.getElementById("diceResult");
   resultEl.textContent = "- awaiting roll -";
-  resultEl.classList.add("dice-result--dim");
+  resultEl.classList.add("dice-result");
 }
 
 function rollDice() {
   const resultEl = document.getElementById("diceResult");
-  resultEl.classList.remove("dice-result--dim");
+  const rollBtn = document.getElementById("rollBtn");
+
+  rollBtn.disabled = true;
+  rollBtn.textContent = `⟳ ROLLING...`;
+  resultEl.className = "dice-result";
 
   let ticks = 0;
-  const maxticks = 15;
+  const maxTicks = 15;
   const interval = setInterval(() => {
-    resultEl.textContent = Math.ceil(Math.random() * selectedDice);
+    const flickerValue = Math.ceil(Math.random() * selectedDice);
+    resultEl.innerHTML = `<span class="dice-result-number">${flickerValue}</span>`;
     ticks++;
-    if (ticks >= maxticks) {
+    if (ticks >= maxTicks) {
       clearInterval(interval);
-      const finalRoll = Math.ceil(Math.random() * selectedDice);
+      const finalValue = Math.ceil(Math.random() * selectedDice);
+      showRollResult(finalValue);
+      addRecentRoll(selectedDice, finalValue);
 
-      resultEl.textContent = finalRoll;
+      // Unlock the button and restore its label
+      rollBtn.disabled = false;
+      rollBtn.textContent = `🎲 ROLL D${selectedDice}`;
     }
   }, 40);
+}
+
+function showRollResult(value) {
+  const resultEl = document.getElementById("diceResult");
+  const isCrit = selectedDice === 20 && value === 20;
+  const isFail = selectedDice === 20 && value === 1;
+
+  resultEl.className =
+    "dice-result" +
+    (isCrit ? " dice-result--crit" : "") +
+    (isFail ? " dice-result--fail" : "");
+
+  let messageHTML = "";
+  if (isCrit)
+    messageHTML = `<span class="dice-crit-message dice-crit-message--hit">★ CRITICAL HIT! ★</span>`;
+  if (isFail)
+    messageHTML = `<span class="dice-crit-message dice-crit-message--fail">✗ CRITICAL FAIL</span>`;
+
+  resultEl.innerHTML = `<span class="dice-result-number">${value}</span>${messageHTML}`;
+}
+
+function addRecentRoll(sides, value) {
+  recentRolls.unshift({ sides, value });
+  if (recentRolls.length > MAX_RECENT_ROLLS) recentRolls.pop();
+  renderRecentRolls();
+}
+
+function renderRecentRolls() {
+  const label = document.getElementById("recentRollsLabel");
+  const container = document.getElementById("recentRolls");
+  container.innerHTML = "";
+
+  label.classList.toggle("hidden", recentRolls.length === 0);
+
+  recentRolls.forEach((roll, index) => {
+    const isCrit = roll.sides === 20 && roll.value === 20;
+    const isFail = roll.sides === 20 && roll.value === 1;
+
+    const chip = document.createElement("span");
+    chip.className =
+      "recent-roll" +
+      (index === 0 ? " recent-roll--latest" : "") +
+      (isCrit ? " recent-roll--crit" : "") +
+      (isFail ? " recent-roll--fail" : "");
+    chip.textContent = `d${roll.sides}:${roll.value}`;
+    container.appendChild(chip);
+  });
 }
 
 function renderDiceRoller() {
@@ -617,27 +675,33 @@ function renderQuestAddButton() {
 function renderQuestAddInput() {
   let addingQuest = true;
   const container = document.getElementById("questAdd");
-  container.innerHTML = `<input type="text" class="quest-add-input" id="questAddInput" placeholder="Type a new quest and press Enter…">`;
+  container.innerHTML = `
+  <div class="quest-add-row">
+  <input type="text" class="quest-add-input" id="questAddInput" placeholder="Type a new quest and press Enter…">
+  <button class="quest-add-confirm" id="questAddConfirm">ADD</button>
+  <button class="quest-add-cancel" id="questAddCancel">×</button>
+  </div>
+  `;
   const input = document.getElementById("questAddInput");
   input.focus();
 
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && input.value.trim()) {
+  function submitQuest() {
+    if (input.value.trim()) {
       addQuest(input.value.trim());
-
-      addingQuest = false;
-      renderQuestAddButton();
-    } else if (e.key === "Escape") {
-      addingQuest = false;
       renderQuestAddButton();
     }
-  });
+  }
 
-  input.addEventListener("blur", () => {
-    if (addingQuest) {
-      addingQuest = false;
-      renderQuestAddButton();
-    }
+  document
+    .getElementById("questAddConfirm")
+    .addEventListener("click", submitQuest);
+  document
+    .getElementById("questAddCancel")
+    .addEventListener("click", renderQuestAddButton);
+
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") submitQuest();
+    else if (e.key === "Escape") renderQuestAddButton();
   });
 }
 
