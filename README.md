@@ -63,7 +63,7 @@ Screenshots
 
 Main Interface
 
-![Main Interface](screenshots/main-interface.jpg)
+![Main Interface](screenshots/main-interface/main-interface.jpg)
 
 SoundBoard
 
@@ -75,9 +75,9 @@ Dice Roller & Quest Journal
 
 Realms
 
-![Dungeon Realm](screenshots/realms/realm01.jpg)
+![Tavern Realm](screenshots/realms/realm01.jpg)
 
-![Dungeon Realm](screenshots/realms/realm02.jpg)
+![Forest Realm](screenshots/realms/realm02.jpg)
 
 Inspiration
 
