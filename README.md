@@ -63,22 +63,22 @@ Screenshots
 
 Main Interface
 
-![Main Interface](screenshots/main-interface/main-interface.jpg)
+![Main Interface](screenshots/main-interface/main-interface.JPG)
 
 SoundBoard
 
-![Main Interface](screenshots/main-interface/main-interface01.jpg)
+![Main Interface](screenshots/main-interface/main-interface01.JPG)
 
 Dice Roller & Quest Journal
 
-![Main Interface](screenshots/main-interface/main-interface02.jpg)
+![Main Interface](screenshots/main-interface/main-interface02.JPG)
 
 Realms
 
-![Tavern Realm](screenshots/realms/realm01.jpg)
+![Tavern Realm](screenshots/realms/realm01.JPG)
 
-![Forest Realm](screenshots/realms/realm02.jpg)
-
+![Forest Realm](screenshots/realms/realm02.JPG)
+S
 Inspiration
 
 Dragon's Echo was inspired by Dungeons & Dragons and fantasy RPG adventures. The project started from a basic Soundboard starter build and evolved into a complete Dungeon Master's companion featuring custom themes, immersive audio, quest management, and interactive gameplay tools.
