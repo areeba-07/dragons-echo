@@ -1,16 +1,16 @@
-Dragon's Echo
+# Dragon's Echo
 
 A Dungeons & Dragons-inspired Dungeon Master's Companion built with HTML, CSS, and JavaScript.
 
-Overview
+## Overview
 
 Dragon's Echo is a fantasy-themed TTRPG companion designed to enhance tabletop RPG sessions. Inspired by the world of Dungeons & Dragons, it combines immersive visuals, ambient audio, and interactive tools into a retro pixel-art experience.
 
 Players can explore different realms, manage quests, roll dice, and create atmosphere through ambient sounds and soundboard effects.
 
-Features
+## Features
 
-Realm Switching
+### Realm Switching
 
 - Dungeon
 - Tavern
@@ -18,17 +18,17 @@ Realm Switching
 - Unique visual themes for each realm
 - Smooth transitions between themes
 
-Ambient Audio
+### Ambient Audio
 
 - Realm-specific ambient soundscapes
 - Toggle ambient audio on/off
 
-Interactive Soundboard
+### Interactive Soundboard
 
 - Fantasy-inspired sound effects
 - Quick access during gameplay
 
-Dice Roller
+### Dice Roller
 
 - Supports:
   - d4
@@ -39,18 +39,18 @@ Dice Roller
   - d20
 - Animated rolling effect
 
-Quest Journal
+### Quest Journal
 
 - Add and remove quests
 - Mark quests as complete
 - Progress tracking
 - Local storage persistence
 
-Responsive Design
+### Responsive Design
 
 - Desktop and mobile-friendly layout
 
-Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
@@ -59,31 +59,31 @@ Technologies Used
 - HTML Audio API
 - SVG Graphics
 
-Screenshots
+## Screenshots
 
-Main Interface
+### Main Interface
 
 ![Main Interface](screenshots/main-interface/main-interface.JPG)
 
-SoundBoard
+### SoundBoard
 
 ![Main Interface](screenshots/main-interface/main-interface01.JPG)
 
-Dice Roller & Quest Journal
+### Dice Roller & Quest Journal
 
 ![Main Interface](screenshots/main-interface/main-interface02.JPG)
 
-Realms
+### Realms
 
 ![Tavern Realm](screenshots/realms/realm01.JPG)
 
 ![Forest Realm](screenshots/realms/realm02.JPG)
-S
-Inspiration
+
+## Inspiration
 
 Dragon's Echo was inspired by Dungeons & Dragons and fantasy RPG adventures. The project started from a basic Soundboard starter build and evolved into a complete Dungeon Master's companion featuring custom themes, immersive audio, quest management, and interactive gameplay tools.
 
-Future Improvements
+## Future Improvements
 
 - Additional realms
 - More ambient soundscapes
@@ -92,6 +92,6 @@ Future Improvements
 - Saveable campaigns
 - Character sheets
 
-Feedback
+## Feedback
 
 Suggestions and feedback are always welcome. Feel free to open an issue or share ideas for future improvements.
